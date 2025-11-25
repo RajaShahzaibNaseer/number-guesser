@@ -4,6 +4,9 @@
 # add number generator
 # add game loop
 
+import random
+
+
 def menu():
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100")
@@ -12,7 +15,7 @@ def menu():
     print("\n Enter your choice: ")
 
 def main():
-    number_to_guess = 1
+    number_to_guess = random.randint(0, 100)
     game_loop = True
     difficulty = 0
     while game_loop:
@@ -25,10 +28,15 @@ def main():
         else:
             difficulty = 3
 
-        while difficulty:
+        while difficulty != 0:
             guess = input("enter your guess")
             if guess == number_to_guess:
-                
+                game_loop = False
+                difficulty = 0
+            else:
+                print("You guessed wrong!")
+                print(f"you have {difficulty} guesses remaining")
+                difficulty -= 1
 
 
 
