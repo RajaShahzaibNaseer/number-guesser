@@ -7,7 +7,7 @@
 # fix menu layout
 # add game end state
 # add game quit option
-# fix compare_numbers not working
+# fix compare_numbers not working (done)
 #
 
 import random
@@ -36,10 +36,11 @@ def main():
             difficulty = 3
         print(difficulty)
         while difficulty != 0:
-            guess = input("enter your guess")
-            if guess == number_to_guess:
+            guess = input("enter your guess: ")
+            if int(guess) == int(number_to_guess):
                 game_loop = False
                 difficulty = 0
+                print("you win!")
             else:
                 compare_numbers = lambda x : f"number is greater then {x}" if int(x) < number_to_guess else f"number is less then {x}"
                 print(f"You guessed wrong!{compare_numbers(guess)}")
