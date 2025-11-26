@@ -3,10 +3,10 @@
 # add choice functionality (done) 
 # add number generator (done)
 # add game loop (done)
-# fix difficulty not being chosen correctly
-# fix menu layout
-# add game end state
-# add game quit option
+# fix difficulty not being chosen correctly (done)
+# fix menu layout (done)
+# add game end state (done)
+# add game quit option (done)
 # fix compare_numbers not working (done)
 #
 
@@ -21,13 +21,11 @@ def menu():
 
 def main():
     number_to_guess = random.randint(0, 100)
-    print(number_to_guess)
     game_loop = True
     difficulty = 0
     while game_loop:
         menu()
         choice = input("Enter your choice: ")
-        print(choice)
         
         if choice == "1":
             difficulty = 10
@@ -38,7 +36,6 @@ def main():
         elif choice == "4":
             game_loop == False
             break
-        print(difficulty)
         while difficulty != 0:
             guess = input("enter your guess: ")
             if int(guess) == int(number_to_guess):
@@ -50,6 +47,9 @@ def main():
                 print(f"You guessed wrong!{compare_numbers(guess)}")
                 print(f"you have {difficulty} guesses remaining")
                 difficulty -= 1
+                
+                if int(difficulty) == 0:
+                    print("you lose! \n")
 
 if __name__ == "__main__":
     main()
