@@ -17,7 +17,7 @@ def menu():
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100")
     print("\nPlease select the difficulty level")
-    print("1.Easy (10 chances) \n 2.Medium (5 chances) \n3.Hard (3 chances) \n4. Quit")
+    print("1.Easy (10 chances) \n2.Medium (5 chances) \n3.Hard (3 chances) \n4.Quit")
 
 def main():
     number_to_guess = random.randint(0, 100)
@@ -28,14 +28,16 @@ def main():
         menu()
         choice = input("Enter your choice: ")
         print(choice)
-        if choice == 1:
+        
+        if choice == "1":
             difficulty = 10
-        elif choice == 2:
+        elif choice == "2":
             difficulty = 5
-        elif choice == 3:
+        elif choice == "3":
             difficulty = 3
-        elif choice == 4:
+        elif choice == "4":
             game_loop == False
+            break
         print(difficulty)
         while difficulty != 0:
             guess = input("enter your guess: ")
