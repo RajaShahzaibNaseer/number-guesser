@@ -2,7 +2,7 @@
 # make the menu appear to highlight choices (done)
 # add choice functionality (done) 
 # add number generator (done)
-# add game loop 
+# add game loop (done)
 # fix difficulty not being chosen correctly
 # fix menu layout
 # add game end state
@@ -17,7 +17,7 @@ def menu():
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100")
     print("\nPlease select the difficulty level")
-    print("1.Easy (10 chances) \n 2.Medium (5 chances) \n3.Hard (3 chances)")
+    print("1.Easy (10 chances) \n 2.Medium (5 chances) \n3.Hard (3 chances) \n4. Quit")
 
 def main():
     number_to_guess = random.randint(0, 100)
@@ -32,8 +32,10 @@ def main():
             difficulty = 10
         elif choice == 2:
             difficulty = 5
-        else:
+        elif choice == 3:
             difficulty = 3
+        elif choice == 4:
+            game_loop == False
         print(difficulty)
         while difficulty != 0:
             guess = input("enter your guess: ")
